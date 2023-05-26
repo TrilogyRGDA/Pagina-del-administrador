@@ -28,20 +28,20 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import inicioSesion.Inicio_Sesion;
 /**
- * En la clase "Pagina_administrador" es una página donde podras realizar las siguientes tareas.&#10;
- * 1º Comprobar las cantidades de membresias de cada tipo ("Cristal_Basic", "Zafiro_Standard", "Rubi_Standard" y "Diamante_Premium") y su respectivo beeficio en total con a operación cantidad de membresias * el precio.&#10;
- * 2º En las opciones anteriores hay una especial que es "Total_Ganancias" donde te mostrara el total de las membresias y el total ganado con la aplicación.&#10;
- * 3º Comprobar mediante el correo si un usuario exisite (Puede comprobar mediante el correo porque el correo es unico por cada usuario).&#10;
- * 4º Camiar de membresia a un usuario que exista que previamente hallas comprobado.&#10;
- * 5º Eliminar a un usuario que previamente hallas comprobado.&#10;
+ * La clase "Pagina_administrador" es una página donde podrás realizar las siguientes tareas:
+ * 1º Comprobar las cantidades de cada tipo de membresías ("Cristal_Basic", "Zafiro_Standard", "Rubi_Standard" y "Diamante_Premium") y su respectivo beneficio total con la operación cantidad de membresías * el precio.
+ * 2º De las opciones anteriores, hay una especial, que es "Total_Ganancias" donde te mostrará el total de las membresías y el total ganado con la aplicación.
+ * 3º Comprobar mediante el correo si un usuario existe (Se puede comprobar mediante el correo, porque el correo es único para cada usuario).
+ * 4º Cambiar de membresia a un usuario que exista que previamente has comprobado.
+ * 5º Eliminar a un usuario que previamente has comprobado.
  * @param contentPane
  * Es el panel principal donde contiene todos los atributos.
  * @param panelLateral
- * Es el panel que interaciona como desplegable cambiando su tamaño y nos da la funcionalidad de agrandar la pantalla para las personas con dificultad y realizar las tareas de salir de la aplicación y ir a la página de início de sesión.
+ * Es el panel que interaciona como desplegable cambiando su tamaño, con la funcionalidad de maximizar la pantalla para las personas con dificultad visual y realiza las tareas de salir de la aplicación e ir a la página de início de sesión.
  * @param lbl_Img_Fondo
- * El label lbl_Img_Fondo es una imagen con un degradado para poner de fondo en la aplicación.
+ * El label lbl_Img_Fondo es una imagen con un degradado para el fondo en la aplicación.
  * @param lbl_FleDesple
- * El label es una imagen clickable que cambia de imagen para informar al usuarios de lo que puede hacer. Lo que puede hacer es encoger o agrandar el panelLateral.
+ * El label es una imagen pulsable que cambia de imagen con información para el usuario de lo que puede hacer. Lo que puede es minimizar o maximizar el panelLateral.
  * @param btn_Inicio_APP
  * El botón de btn_Inicio_APP te permite ir a la página de inicio de sesión.
  * @param btn_Salir
@@ -53,32 +53,34 @@ import inicioSesion.Inicio_Sesion;
  * @param lbl_Texto_2
  * El label lbl_Texto_2 es un atributo informativo para el usuario donde pone "USUARIOS".
  * @param comboBox_Tipo_de_membreisa1
- * El comboBox comboBox_Tipo_de_membreisa1 es un menu en forma de desplegable donde te ofrece unas opciones sobre los diferente tipos de membresias y una opción especial que es "Total_Ganancias".
+ * El comboBox comboBox_Tipo_de_membreisa1 es un menú en forma de desplegable donde te ofrece unas opciones sobre los diferente tipos de membresías y una opción especial que es "Total_Ganancias".
  * @param comboBox_Tipo_de_membreisa2
- * El comboBox comboBox_Tipo_de_membreisa2 es un menu en forma de desplegable donde te ofrece unas opciones sobre los diferente tipos de membresias.
+ * El comboBox comboBox_Tipo_de_membreisa2 es un menú en forma de desplegable donde te ofrece unas opciones sobre los diferente tipos de membresías.
  * @param lbl_Total_membresias
- * El label lbl_Total_membresias te muestra la cantidad de membresias que hay según hallas selecionado en comboBox_Tipo_de_membreisa1.
+ * El label lbl_Total_membresias te muestra la cantidad de membresías que hay según  SELECCIONADO en comboBox_Tipo_de_membreisa1.
  * @param lbl_Total_Ganado
- * El label lbl_Total_Ganado te muestra la cantidad total que has ganado con la membresia que hallas selecionado en comboBox_Tipo_de_membreisa1.
+ * El label lbl_Total_Ganado te muestra la cantidad total que has ganado con la membresía que has SELECCIONADO en comboBox_Tipo_de_membreisa1.
  * @param txt_Correo
- * El jTextField txt_Correo te permite escribir en este caso un correo con el que puedes realizar diferentes tareas.
+ * El jTextField txt_Correo te permite escribir un correo con el que puedes realizar diferentes tareas.
  * @param lbl_Nombre
- * El label lbl_Nombre te muestra el nombre del usuario que previamente hallas escrito en el txt_Correo.
+ * El label lbl_Nombre te muestra el nombre del usuario que previamente ha escrito en el txt_Correo.
  * @param lbl_Apellidos_User
- * El label lbl_Apellidos_User te muestra los apellidos del usuario que previamente hallas escrito en el txt_Correo.
+ * El label lbl_Apellidos_User te muestra los apellidos del usuario que previamente ha escrito en el txt_Correo.
  * @param btnComprobar_users
  * El botón btnComprobar_users te permite comprobar si un usuario existe mediante el atributo txt_Correo.
  * @param btnCambioMembresia
- * El botón btnCambioMembresia te permite cambiar de membresia a un usuario que previamente hallas confirmado que existe con el btnComprobar_users.
- * @param btnConfirmarEliminacion
- * El botón btnConfirmarEliminacion te permite eliminar un usuario que previamente hallas confirmado que existe con el btnComprobar_users.
- * @author TRILOGY. Miembros: Adrian Leal Vacas, Gonzalo Amo Cano y Raul Senso Montojo.
+ * El botón btnCambioMembresia te permite cambiar de membresía a un usuario que previamente ha confirmado que existe con el btnComprobar_users.
+* @param btnConfirmarEliminacion
+ * El botón btnConfirmarEliminacion te permite eliminar un usuario que previamente ha confirmado que existe con el btnComprobar_users. 
+ * * @param btnCalcular_Ganancias
+ * El botón btnCalcular_Ganancias te permite conocer las ganancias totales según tengas usuarios con un membresía. 
+ * @author TRILOGY. Miembros: Adrián Leal Vacas, Gonzalo Amo Cano y Raúl Senso Montojo.
  */
 public class Pagina_administrador extends JFrame {
 	// UID VERSIÓN
 	/**
-	 * La versión del programa del administrador es la 1.
-	 * Incluye las tareas basicas del administrador que son coprobar las ganacias, comprobar usuarios, cambiar membresias y eliminar usuarios.
+	 * La única versión del programa del administrador.
+	 * Incluye las tareas básicas del administrador que son: comprobar las ganacias, comprobar usuarios, cambiar membresías y eliminar usuarios.
 	 * @version 1.0
 	 */
 	private static final long serialVersionUID = 1L;
@@ -111,21 +113,21 @@ public class Pagina_administrador extends JFrame {
 	int membresia_id2;
 	int membresia_id;
 	private boolean comprobar_user=false;
-	// ATRUBUTOS O OBJTOS NECESARIOS PARA AL CONEXION Y LA BASE DE DATOS Y LA REALIZACIONDE UN CONSULTA BASICA
-	private static String bd="XE"; // NOMBRE DE LA BASE DE DATOS POR DEFECT SIEMPRE DEJAR EL "XE"
+	// ATRIBUTOS Y OBJETOS NECESARIOS PARA AL CONEXIÓN, LA BASE DE DATOS Y LA REALIZACIÓN DE UN CONSULTA BÁSICA
+	private static String bd="XE"; // NOMBRE DE LA BASE DE DATOS POR DEFECTO SIEMPRE, DEJAR EL "XE"
 	private static String login="TRILOGY"; // USUARIO DE LA BBDD
 	private static String password="TRILOGY"; // CONTRASEÑA DE LA BBDD
 	// RUTA DE SERVICIO
 	private static String url="jdbc:oracle:thin:@localhost:1521:"+bd;
-	// PONEMOS LOS OBJETOS A NULL Y SIN INTANCIAR
-	static Connection connection=null; // CONEXION A LA BASE DE DATOS
-	static Statement st; // PARA REALIZAR SQL ESTATICAS (HAY QUE ENLAZARLA SIEMPRE CON EL "Connection" SINO NO FUNCIONA)
+	// PONEMOS LOS OBJETOS A NULL Y SIN INSTANCIAR
+	static Connection connection=null; // CONEXIÓN A LA BASE DE DATOS
+	static Statement st; // PARA REALIZAR SQL ESTÁTICAS (HAY QUE ENLAZARLA SIEMPRE CON EL "Connection" SINO, NO FUNCIONA)
 	static ResultSet rs; // PARA REALIZAR LA CONSULTA IGUAL QUE EN SQL DEVELOPER
 	// ------------------------------------------------------------------------------------------------------
-	// METODO MAIN
+	// MÉTODO MAIN
 	// ------------------------------------------------------------------------------------------------------
 	/**
-	 * En el metodo main ejecutamos la ventana principal Pagina_administrador y realizamos la conexión a la base de datos para el funcionamiento de la página.
+	 * En el método main ejecutamos la ventana principal Pagina_administrador y realizamos la conexión a la base de datos para el correcto funcionamiento de la página.
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -135,33 +137,33 @@ public class Pagina_administrador extends JFrame {
 					frame.setVisible(true);
 					conectar();
 				} catch (Exception e) {
-					JOptionPane.showMessageDialog(null, "ERROR. No se ha podido haceder a la pagina del administrador.");
+					JOptionPane.showMessageDialog(null, "ERROR. No se ha podido acceder a la página del administrador.");
 				} 
 			}
 		});
 	}
 	// ------------------------------------------------------------------------------------------------------
-	// METODOS
+	// MÉTODOS
 	// ------------------------------------------------------------------------------------------------------
 	// ------------------------------------------------------------------------------------------------------
-	// METODO PARA CONECTAR A LA BASE DE DATOS
+	// MÉTODO PARA CONECTAR A LA BASE DE DATOS
 	// ------------------------------------------------------------------------------------------------------
 	/**
-	 * El metodo conectar() realiza una conexión a la base de datos.
+	 * El método conectar() realiza una conexión a la base de datos.
 	 */
 	public static void conectar() throws Exception{
 		// DRIVER PARA ORACLE
-		Class.forName("oracle.jdbc.driver.OracleDriver"); // EL DRIVER DEL JDBC SIEMPRE ES EL MISMO QUE ESTA PUESTO
-		connection=DriverManager.getConnection(url,login,password); // NOS CONECTAMOS A LA BASE DE DATOS CON LA URL Y LOGIN Y EL PASSWORD QUE PREVIAMENTE PUSIMOS EN LOS ATRIBUTOS
+		Class.forName("oracle.jdbc.driver.OracleDriver"); // EL DRIVER DEL JDBC SIEMPRE ES EL MISMO
+		connection=DriverManager.getConnection(url,login,password); // NOS CONECTAMOS A LA BASE DE DATOS CON LA URL, LOGIN Y EL PASSWORD QUE PREVIAMENTE PUSIMOS EN LOS ATRIBUTOS
 	}
 	// ------------------------------------------------------------------------------------------------------
-	// METODO PARA CERRAR LA BASE DE DATOS
+	// MÉTODO PARA CERRAR LA BASE DE DATOS
 	// ------------------------------------------------------------------------------------------------------
 	/**
-	 * El metodo cerrar() cierra la base de datos.
+	 * El método cerrar() cierra la base de datos.
 	 */
 	public static void cerrar() throws SQLException{
-		// SIEMPRE EN EL MISMO ORDEN SINO DA FALLO
+		// SIEMPRE EN EL MISMO ORDEN, SINO, DA FALLO
 		if (rs!=null) rs.close(); // CERRAMOS EL RS SI ES DIFERENTE AL NULL (FUNCIONANDO)
 		if (st!=null) st.close(); // CERRAMOS EL ST SI ES DIFERENTE AL NULL (FUNCIONANDO)
 		if (connection!=null) connection.close(); // CERRAMOS EL connection SI ES DIFERENTE AL NULL (FUNCIONANDO)
@@ -170,7 +172,7 @@ public class Pagina_administrador extends JFrame {
 	// PARA OCULTAR LOS BOTONES PARA MEJOR APARENCIA
 	// ------------------------------------------------------------------------------------------------------
 	/**
-	 * El metodo EsconderBotones() realiza un encogimiento de los elementos del panel de la izquierda.
+	 * El método EsconderBotones() realiza un minimizado de los elementos del panel de la izquierda.
 	 */
 	public void EsconderBotones() {
 		// LABEL DEL LOGO
@@ -179,13 +181,13 @@ public class Pagina_administrador extends JFrame {
 		lblLogoOriginal.setHorizontalAlignment(SwingConstants.CENTER); // CENTRO EL TEXTO
 		// AJUSTAR IMAGEN AL CONTENIDO
 		ImageIcon logoOriginal2 = new ImageIcon(getClass().getResource("/Trilogy_imagenes/IconoTrilogy.png")); // CREACIÓN NUEVO OBJETO CON LA RUTA DE LA IMAGEN
-		ImageIcon imgLogoOriginal2 = new ImageIcon(logoOriginal2.getImage().getScaledInstance(57, 57, Image.SCALE_SMOOTH)); // CREAMOS OTRO OBJETO PARA QUE SE AJUSTE AUTOMATICAMENTE LA IMAGEN AL LABEL
+		ImageIcon imgLogoOriginal2 = new ImageIcon(logoOriginal2.getImage().getScaledInstance(57, 57, Image.SCALE_SMOOTH)); // CREAMOS OTRO OBJETO PARA QUE SE AJUSTE AUTOMÁTICAMENTE LA IMAGEN AL LABEL
 		lblLogoOriginal.setIcon(imgLogoOriginal2);
-		// BOTON AJUSTES ADMINISTRADOR
+		// BOTÓN DE AJUSTES ADMINISTRADOR
 		btn_Inicio_APP.setBounds(6, 295, 60, 58);
 		btn_Inicio_APP.setText("");
 		btn_Inicio_APP.setHorizontalAlignment(SwingConstants.CENTER);
-		// BOTON DE SALIR
+		// BOTÓN DE SALIR
 		btn_Salir.setBounds(6, 592, 60, 58); // HACEMOS EL BOTÓN MÁS PEQUEÑO
 		btn_Salir.setText(""); // LIMPIAMOS EL TEXTO
 		btn_Salir.setHorizontalAlignment(SwingConstants.CENTER); // CENTRO EL TEXTO
@@ -194,35 +196,37 @@ public class Pagina_administrador extends JFrame {
 	// MUESTRA LOS BOTONES PARA MAYOR INFORMACIÓN
 	// ------------------------------------------------------------------------------------------------------
 	/**
-	* El metodo MostrarBotones() realiza un ensanchamiento de los elementos del panel de la izquierda (por defecto).
-	*/
+	 * El método MostrarBotones() realiza un minimizado de los elementos del panel de la izquierda (por defecto).
+	 */
 	public void MostrarBotones() {
 		// LABEL DEL LOGO
 		lblLogoOriginal.setBounds(10, 11, 199, 75); 
 		lblLogoOriginal.setText(""); // LIMPIAMOS EL TEXTO
 		// AJUSTAR IMAGEN AL CONTENIDO
 		ImageIcon logoOriginal = new ImageIcon(getClass().getResource("/Trilogy_imagenes/LogoTrilogyNegro.png")); // CREACIÓN NUEVO OBJETO CON LA RUTA DE LA IMAGEN
-		ImageIcon imgLogoOriginal = new ImageIcon(logoOriginal.getImage().getScaledInstance(lblLogoOriginal.getWidth(), lblLogoOriginal.getHeight(), Image.SCALE_SMOOTH)); // CREAMOS OTRO OBJETO PARA QUE SE AJUSTE AUTOMATICAMENTE LA IMAGEN AL LABEL
+		ImageIcon imgLogoOriginal = new ImageIcon(logoOriginal.getImage().getScaledInstance(lblLogoOriginal.getWidth(), lblLogoOriginal.getHeight(), Image.SCALE_SMOOTH)); // CREAMOS OTRO OBJETO PARA QUE SE AJUSTE AUTOMÁTICAMENTE LA IMAGEN AL LABEL
 		lblLogoOriginal.setIcon(imgLogoOriginal);
-		// BOTON AJUSTES ADMINISTRADOR
+		//-------------------------------------------------------------------------------
+		// BOTÓN DE AJUSTES ADMINISTRADOR
 		btn_Inicio_APP.setBounds(10, 295, 199, 90);
-		btn_Inicio_APP.setText("      INÍCIO");
+		btn_Inicio_APP.setText("      INICIO");
 		btn_Inicio_APP.setHorizontalAlignment(SwingConstants.LEFT); 
 		btn_Inicio_APP.setFont(new Font("Tahoma", Font.BOLD, 14));
-		// BOTON DE SALIR
+		//-------------------------------------------------------------------------------
+		// BOTÓN DE SALIR
 		btn_Salir.setBounds(10, 562, 199, 90); 
 		btn_Salir.setText("      LOGOUT"); 
 		btn_Salir.setHorizontalAlignment(SwingConstants.LEFT); 
 		btn_Salir.setFont(new Font("Tahoma", Font.BOLD, 14)); 
 		ImageIcon iconoSalir = new ImageIcon(getClass().getResource("/Trilogy_imagenes/IconoLogout.png")); // CREACIÓN NUEVO OBJETO CON LA RUTA DE LA IMAGEN
-		ImageIcon imgiconoSalir = new ImageIcon(iconoSalir.getImage().getScaledInstance(57, 57, Image.SCALE_SMOOTH)); // CREAMOS OTRO OBJETO PARA QUE SE AJUSTE AUTOMATICAMENTE LA IMAGEN AL LABEL
+		ImageIcon imgiconoSalir = new ImageIcon(iconoSalir.getImage().getScaledInstance(57, 57, Image.SCALE_SMOOTH)); // CREAMOS OTRO OBJETO PARA QUE SE AJUSTE AUTOMÁTICAMENTE LA IMAGEN AL LABEL
 		btn_Salir.setIcon(imgiconoSalir);
 	}
 	// ------------------------------------------------------------------------------------------------------
 	// CONSTRUCTOR
 	// ------------------------------------------------------------------------------------------------------
 	/**
-	 * El constructor se llama a los atributos y metodos necesarios para el funcionamiento de la clase Pagina_administrador.
+	 * El constructor llama a los atributos y métodos necesarios para el funcionamiento de la clase Pagina_administrador.
 	 */
 	public Pagina_administrador() {
 		setType(Type.UTILITY);
@@ -234,7 +238,7 @@ public class Pagina_administrador extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		// ------------------------------------------------------------------------------------------------------
-		// PANEL LATERAL DEL ADMINISTRADOR
+		// PANEL DEL ADMINISTRADOR
 		// ------------------------------------------------------------------------------------------------------
 		panelLateral = new JPanel();
 		panelLateral.setBackground(new Color(153, 255, 153));
@@ -250,11 +254,11 @@ public class Pagina_administrador extends JFrame {
 		lblLogoOriginal.setBounds(10, 11, 199, 75);
 		// AJUSTAR IMAGEN AL CONTENIDO
 		ImageIcon logoOriginal = new ImageIcon(getClass().getResource("/Trilogy_imagenes/LogoTrilogyNegro.png")); // CREACIÓN NUEVO OBJETO CON LA RUTA DE LA IMAGEN
-		ImageIcon imgLogoOriginal = new ImageIcon(logoOriginal.getImage().getScaledInstance(lblLogoOriginal.getWidth(), lblLogoOriginal.getHeight(), Image.SCALE_SMOOTH)); // CREAMOS OTRO OBJETO PARA QUE SE AJUSTE AUTOMATICAMENTE LA IMAGEN
+		ImageIcon imgLogoOriginal = new ImageIcon(logoOriginal.getImage().getScaledInstance(lblLogoOriginal.getWidth(), lblLogoOriginal.getHeight(), Image.SCALE_SMOOTH)); // CREAMOS OTRO OBJETO PARA QUE SE AJUSTE AUTOMÁTICAMENTE LA IMAGEN
 		lblLogoOriginal.setIcon(imgLogoOriginal);
 		panelLateral.add(lblLogoOriginal);
 		// ------------------------------------------------------------------------------------------------------
-		// BOTÓN DE SALIR DE LA APP
+		// BOTÓN DE SALIR DE LA APLICACIÓN
 		// ------------------------------------------------------------------------------------------------------
 		btn_Salir = new JButton("      LOGOUT");
 		btn_Salir.setHorizontalAlignment(SwingConstants.LEFT);
@@ -265,14 +269,14 @@ public class Pagina_administrador extends JFrame {
 		btn_Salir.setBounds(10, 562, 199, 90);
 		// AJUSTAR IMAGEN AL CONTENIDO
 		ImageIcon iconoSalir = new ImageIcon(getClass().getResource("/Trilogy_imagenes/IconoLogout.png")); // CREACIÓN NUEVO OBJETO CON LA RUTA DE LA IMAGEN
-		ImageIcon imgiconoSalir = new ImageIcon(iconoSalir.getImage().getScaledInstance(57, 57, Image.SCALE_SMOOTH)); // CREAMOS OTRO OBJETO PARA QUE SE AJUSTE AUTOMATICAMENTE LA IMAGEN
+		ImageIcon imgiconoSalir = new ImageIcon(iconoSalir.getImage().getScaledInstance(57, 57, Image.SCALE_SMOOTH)); // CREAMOS OTRO OBJETO PARA QUE SE AJUSTE AUTOMÁTICAMENTE LA IMAGEN
 		btn_Salir.setIcon(imgiconoSalir);
-		// EVENTOS CON EL RATON (MOUSE)
+		// EVENTOS CON EL RATÓN (MOUSE)
 		btn_Salir.addMouseListener(new MouseAdapter() {
-			// CUANDO ESTAS PASANDO POR ENCIMA
+			// CUANDO ESTÁS PASANDO POR ENCIMA
 			@Override
 			public void mouseEntered(MouseEvent e) {
-				btn_Salir.setBackground(new Color(92,252,92)); // EL COLOR QUE SE VA A PONER CUANDO PASES POR ENCIMA (O ESTE COLOR 29,239,29 PREGUNTAR AL GRUPO)
+				btn_Salir.setBackground(new Color(92,252,92)); // EL COLOR QUE SE VA A PONER CUANDO PASES POR ENCIMA
 				btn_Salir.setForeground(new Color(0,0,0)); // COLOR CUANDO YA HAS PASADO POR ENCIMA
 			}
 			// CUANDO DEJES DE PASAR POR ENCIMA
@@ -281,7 +285,7 @@ public class Pagina_administrador extends JFrame {
 				btn_Salir.setBackground(new Color(153,255,153)); // EL COLOR QUE SE VA A PONER CUANDO DEJES DE PASES POR ENCIMA
 				btn_Salir.setForeground(new Color(0,0,0)); // COLOR CUANDO YA HAS PASADO POR ENCIMA
 			}
-			// CUANDOS CLICKEAS
+			// CUANDOS PULSAS
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				// CIERRA LA BASE DE DATOS
@@ -306,23 +310,23 @@ public class Pagina_administrador extends JFrame {
 		btn_Inicio_APP.setBounds(10, 295, 199, 90);
 		// AJUSTAR IMAGEN AL CONTENIDO
 		ImageIcon iconoEngranaje = new ImageIcon(getClass().getResource("/Trilogy_imagenes/Icono_Inicio.png")); // CREACIÓN NUEVO OBJETO CON LA RUTA DE LA IMAGEN
-		ImageIcon imgIconoEngranaje = new ImageIcon(iconoEngranaje.getImage().getScaledInstance(57, 57, Image.SCALE_SMOOTH)); // CREAMOS OTRO OBJETO PARA QUE SE AJUSTE AUTOMATICAMENTE LA IMAGEN
+		ImageIcon imgIconoEngranaje = new ImageIcon(iconoEngranaje.getImage().getScaledInstance(57, 57, Image.SCALE_SMOOTH)); // CREAMOS OTRO OBJETO PARA QUE SE AJUSTE AUTOMÁTICAMENTE LA IMAGEN
 		btn_Inicio_APP.setIcon(imgIconoEngranaje);
-		// EVENTOS CON EL RATON (MOUSE)
+		// EVENTOS CON EL RATÓN (MOUSE)
 		btn_Inicio_APP.addMouseListener(new MouseAdapter() {
-			// CUANDO ESTAS PASANDO POR ENCIMA
+			// CUANDO ESTÁS PASANDO POR ENCIMA
 			@Override
 			public void mouseEntered(MouseEvent e) {
-				btn_Inicio_APP.setBackground(new Color(92,252,92)); // EL COLOR QUE SE VA A PONER CUANDO PASES POR ENCIMA (O ESTE COLOR 29,239,29 PREGUNTAR AL GRUPO)
+				btn_Inicio_APP.setBackground(new Color(92,252,92)); // EL COLOR QUE SE VA A PONER CUANDO PASES POR ENCIMA
 				btn_Inicio_APP.setForeground(new Color(0,0,0)); // COLOR CUANDO YA HAS PASADO POR ENCIMA
 			}
-			// CUANDO DESJES DE PASAR POR ENCIMA
+			// CUANDO DEJES DE PASAR POR ENCIMA
 			@Override
 			public void mouseExited(MouseEvent e) {
 				btn_Inicio_APP.setBackground(new Color(153,255,153)); // EL COLOR QUE SE VA A PONER CUANDO DEJES DE PASES POR ENCIMA
 				btn_Inicio_APP.setForeground(new Color(0,0,0)); // COLOR CUANDO YA HAS PASADO POR ENCIMA
 			}
-			// CUANDOS CLICKEAS
+			// CUANDO PULSAS
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				try {
@@ -351,10 +355,10 @@ public class Pagina_administrador extends JFrame {
 		lbl_Img_Fondo.setBounds(0, 0, 961, 664);
 		// AJUSTAR IMAGEN AL CONTENIDO
 		ImageIcon fondo = new ImageIcon(getClass().getResource("/Trilogy_imagenes/Fondo_Formulario.png")); // CREACIÓN NUEVO OBJETO CON LA RUTA DE LA IMAGEN
-		ImageIcon imgFondo = new ImageIcon(fondo.getImage().getScaledInstance(lbl_Img_Fondo.getWidth(), lbl_Img_Fondo.getHeight(), Image.SCALE_SMOOTH)); // CREAMOS OTRO OBJETO PARA QUE SE AJUSTE AUTOMATICAMENTE LA IMAGEN AL LABEL
-		lbl_Img_Fondo.setIcon(imgFondo); // DECIMOS QUE EL ICONO ES IGUAL A EL OBJETO QUE SE AJUSTA AUTOMATICAMENTE AL TAMAÑO DEL LABEL
+		ImageIcon imgFondo = new ImageIcon(fondo.getImage().getScaledInstance(lbl_Img_Fondo.getWidth(), lbl_Img_Fondo.getHeight(), Image.SCALE_SMOOTH)); // CREAMOS OTRO OBJETO PARA QUE SE AJUSTE AUTOMÁTICAMENTE LA IMAGEN AL LABEL
+		lbl_Img_Fondo.setIcon(imgFondo); // DECIMOS QUE EL ICONO ES IGUAL AL OBJETO Y SE AJUSTA AUTOMÁTICAMENTE AL TAMAÑO DEL LABEL
 		// ------------------------------------------------------------------------------------------------------
-		// LBL COEN EL TEXTO "NÚMEROS DE INSCRITOS A LA MEMBRESÍA"
+		// LBL CON EL TEXTO "NÚMEROS DE INSCRITOS A LA MEMBRESÍA"
 		// ------------------------------------------------------------------------------------------------------		
 		lbl_Texto_1 = new JLabel("NÚMERO DE INSCRITOS A LA MEMBRESÍA");
 		lbl_Texto_1.setHorizontalAlignment(SwingConstants.CENTER);
@@ -362,7 +366,7 @@ public class Pagina_administrador extends JFrame {
 		lbl_Texto_1.setFont(new Font("Tahoma", Font.BOLD, 28));
 		lbl_Texto_1.setBounds(30, 35, 901, 48);
 		// ------------------------------------------------------------------------------------------------------
-		// LBL COEN EL TEXTO "USUARIOS"
+		// LBL CON EL TEXTO "USUARIOS"
 		// ------------------------------------------------------------------------------------------------------
 		lbl_Texto_2 = new JLabel("USUARIOS");
 		lbl_Texto_2.setHorizontalAlignment(SwingConstants.CENTER);
@@ -370,7 +374,7 @@ public class Pagina_administrador extends JFrame {
 		lbl_Texto_2.setFont(new Font("Tahoma", Font.BOLD, 28));
 		lbl_Texto_2.setBounds(30, 283, 901, 48);
 		// ------------------------------------------------------------------------------------------------------
-		// DESPLEGABLE DE LAS DIFERENTES MEMBRESIAS (NÚMEROS DE INSCRITOS A LA MEMBRESÍA)
+		// DESPLEGABLE DE LAS DIFERENTES MEMBRESÍAS (NÚMEROS DE INSCRITOS A LA MEMBRESÍA)
 		// ------------------------------------------------------------------------------------------------------
 		comboBox_Tipo_de_membreisa1 = new JComboBox<String>();
 		comboBox_Tipo_de_membreisa1.setBorder(new CompoundBorder());
@@ -381,16 +385,16 @@ public class Pagina_administrador extends JFrame {
 		comboBox_Tipo_de_membreisa1.setModel(new DefaultComboBoxModel<String>(new String[] {"Cristal_Basic", "Zafiro_Standard", "Rubi_Standard", "Diamante_Premium","Total_Ganancias"}));
 		comboBox_Tipo_de_membreisa1.setBounds(50, 124, 300, 45);
 		// ------------------------------------------------------------------------------------------------------
-		// LABEL DONDE PONE LA CANTIDAD DE MEMBRESIAS DEL TIPO SELECIONADO EN EL DESPLEGABLE (SE SACA CON LA CONSULTA)
+		// LABEL DONDE PONE LA CANTIDAD DE MEMBRESÍAS DEL TIPO SELECCIONADO EN EL DESPLEGABLE (SE SACA CON LA CONSULTA)
 		// ------------------------------------------------------------------------------------------------------
-		lbl_Total_membresias = new JLabel("TOTAL MEMBRESIAS");
+		lbl_Total_membresias = new JLabel("TOTAL MEMBRESÍAS");
 		lbl_Total_membresias.setFont(new Font("Tahoma", Font.PLAIN, 24));
 		lbl_Total_membresias.setHorizontalAlignment(SwingConstants.CENTER);
 		lbl_Total_membresias.setOpaque(true);
 		lbl_Total_membresias.setBackground(new Color(255, 255, 255));
 		lbl_Total_membresias.setBounds(375, 124, 240, 45);
 		// ------------------------------------------------------------------------------------------------------
-		// LABEL DONDE PONE LA CANTIDAD TOTAL GANADA DEL TIPO DE MEMBRESIA SELECIONADO EN EL DESPLEGABLE (SE SACA CON LA CONSULTA)
+		// LABEL DONDE PONE LA CANTIDAD TOTAL GANADA DEL TIPO DE MEMBRESÍA SELECCIONADO EN EL DESPLEGABLE (SE SACA CON LA CONSULTA)
 		// ------------------------------------------------------------------------------------------------------
 		lbl_Total_Ganado = new JLabel("TOTAL GANADO");
 		lbl_Total_Ganado.setOpaque(true);
@@ -399,7 +403,7 @@ public class Pagina_administrador extends JFrame {
 		lbl_Total_Ganado.setBackground(Color.WHITE);
 		lbl_Total_Ganado.setBounds(640, 124, 270, 45);
 		// ------------------------------------------------------------------------------------------------------
-		// TEXT FIELD DONDE EL USUARIO (ADMINISTRADOR) TIENE QUE PONER EL ID QUE SE LE ENVIO POR GMAIL CUANDO SE REGISTRO EL USUARIO
+		// TEXT FIELD DONDE EL USUARIO (ADMINISTRADOR) TIENE QUE PONER EL ID QUE SE LE ENVIÓ POR CORREO CUANDO SE REGISTRO EL USUARIO
 		// ------------------------------------------------------------------------------------------------------
 		txt_Correo = new JTextField();
 		txt_Correo.setForeground(new Color(150,150,150));
@@ -418,7 +422,7 @@ public class Pagina_administrador extends JFrame {
 		lbl_Nombre.setBackground(Color.WHITE);
 		lbl_Nombre.setBounds(570, 360, 340, 45);
 		// ------------------------------------------------------------------------------------------------------
-		// LABEL DONDE CUANDO PONGAS EL ID CAMBIE A EL CORREO DEL USUARIO
+		// LABEL QUE CUANDO PONGAS EL ID, CAMBIE A EL CORREO DEL USUARIO
 		// ------------------------------------------------------------------------------------------------------
 		lbl_Apellidos_User = new JLabel("APELLIDOS");
 		lbl_Apellidos_User.setOpaque(true);
@@ -427,7 +431,7 @@ public class Pagina_administrador extends JFrame {
 		lbl_Apellidos_User.setBackground(Color.WHITE);
 		lbl_Apellidos_User.setBounds(74, 460, 450, 45);
 		// ------------------------------------------------------------------------------------------------------
-		// DESPLEGABLE CON LOS NOMBRES DE LAS DIFERENTES MEMBRESIA (USUARIO)
+		// DESPLEGABLE CON LOS NOMBRES DE LAS DIFERENTES MEMBRESÍA (USUARIO)
 		// ------------------------------------------------------------------------------------------------------
 		comboBox_Tipo_de_membreisa2 = new JComboBox<String>();
 		comboBox_Tipo_de_membreisa2.setBorder(new CompoundBorder());
@@ -442,11 +446,11 @@ public class Pagina_administrador extends JFrame {
 		// ------------------------------------------------------------------------------------------------------
 		btnCalcular_Ganancias = new JButton("CALCULAR GANANCIAS");
 		btnCalcular_Ganancias.addMouseListener(new MouseAdapter() {
-		@Override
-		public void mouseClicked(MouseEvent e) {
-			// GUARDO EL VALOR DEL comboBox_Tipo_de_membreisa1 PARA LUEGO PODER COMPARARLO CON LA BASE DE DATOS PARA LA CONSULTA DE LA GANANCIA
-			tipo_de_membreisa1=comboBox_Tipo_de_membreisa1.getSelectedItem().toString().toUpperCase();
-			switch (tipo_de_membreisa1) {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				// GUARDO EL VALOR DEL comboBox_Tipo_de_membreisa1 PARA LUEGO PODER COMPARARLO CON LA BASE DE DATOS PARA LA CONSULTA DE LA GANANCIA
+				tipo_de_membreisa1=comboBox_Tipo_de_membreisa1.getSelectedItem().toString().toUpperCase();
+				switch (tipo_de_membreisa1) {
 				case "CRISTAL_BASIC":
 					membresia_id=1;
 					break;
@@ -460,94 +464,94 @@ public class Pagina_administrador extends JFrame {
 					membresia_id=4;
 					break;
 				case "TOTAL_GANANCIAS":
-					membresia_id=5; // CALCULAR EL TOTAL DE TODAS LAS MEMBRESIAS
+					membresia_id=5; // CALCULAR EL TOTAL DE TODAS LAS MEMBRESÍAS
 					break;
 				default:
 					membresia_id=1;
 					break;
-			}
-			if (membresia_id==5) {
-				try {
-					// NOS CONECTAMOS A LA BASE DE DATOS
-					Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "TRILOGY", "TRILOGY");
-					// REALIZAMOS EL SELECT CON LOS DATOS QUE QUEREMOS ALMACENAR (? --> ES UN CAMPO QUE LO VA A ADQUIRIR DE LA VARIABLE membresia_id) (SIRVE PARA CREAR LA SENTENCIA SQL)
-					String query3 = "SELECT SUM(MEMBRESIAS.PRECIO) FROM CON_MEMBRESIAS JOIN MEMBRESIAS ON CON_MEMBRESIAS.ID_MEMBRESIAS=MEMBRESIAS.ID_MEMBRESIAS";
-					PreparedStatement stmt3 = con.prepareStatement(query3);
-					rs = stmt3.executeQuery();
-					double totalGanancia=0;
-					while (rs.next()) {
-						// ALMACENA EL DATO DE LA COLUMNA NOMBRE EN LA VARIABLE totalGanancia
-						totalGanancia = rs.getDouble(1);
-						// CAMBIA EL TEXTO DE lbl_Total_Ganado AL VALOR DE LA VARIABLE totalGanancia
-						lbl_Total_Ganado.setText(String.valueOf(totalGanancia));
-					}
-				} catch (SQLException e1) {
-					JOptionPane.showMessageDialog(null, "ERROR. No se ha podido realizar la consulta. Perdone las molestias.");
 				}
-				Connection con;
-				try {
-					con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "TRILOGY", "TRILOGY");
-					String query4 = "SELECT count(ID_USUARIO) FROM CON_MEMBRESIAS";
-					PreparedStatement stmt4 = con.prepareStatement(query4);
-					rs = stmt4.executeQuery();
-					int total_membresias=0;
-					while (rs.next()) {
-						// ALMACENA EL DATO DE LA COLUMNA NOMBRE EN LA VARIABLE totalGanancia
-						total_membresias = rs.getInt(1);
-						// CAMBIA EL TEXTO DE lbl_Total_Ganado AL VALOR DE LA VARIABLE totalGanancia
-						lbl_Total_membresias.setText(String.valueOf(total_membresias));
+				if (membresia_id==5) {
+					try {
+						// NOS CONECTAMOS A LA BASE DE DATOS
+						Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "TRILOGY", "TRILOGY");
+						// REALIZAMOS EL SELECT CON LOS DATOS QUE QUEREMOS ALMACENAR (? --> ES UN CAMPO QUE LO VA A ADQUIRIR DE LA VARIABLE membresia_id) (SIRVE PARA CREAR LA SENTENCIA SQL)
+						String query3 = "SELECT SUM(MEMBRESIAS.PRECIO) FROM CON_MEMBRESIAS JOIN MEMBRESIAS ON CON_MEMBRESIAS.ID_MEMBRESIAS=MEMBRESIAS.ID_MEMBRESIAS";
+						PreparedStatement stmt3 = con.prepareStatement(query3);
+						rs = stmt3.executeQuery();
+						double totalGanancia=0;
+						while (rs.next()) {
+							// ALMACENA EL DATO DE LA COLUMNA NOMBRE EN LA VARIABLE totalGanancia
+							totalGanancia = rs.getDouble(1);
+							// CAMBIA EL TEXTO DE lbl_Total_Ganado AL VALOR DE LA VARIABLE totalGanancia
+							lbl_Total_Ganado.setText(String.valueOf(totalGanancia));
+						}
+					} catch (SQLException e1) {
+						JOptionPane.showMessageDialog(null, "ERROR. No se ha podido realizar la consulta. Perdone las molestias.");
 					}
-				} catch (SQLException e1) {
-					JOptionPane.showMessageDialog(null, "ERROR. No se ha podido realizar la consulta. Perdone las molestias.");
-				}
-			} else {
-				try {
-					// NOS CONECTAMOS A LA BASE DE DATOS
-					Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "TRILOGY", "TRILOGY");
-					// REALIZAMOS EL SELECT CON LOS DATOS QUE QUEREMOS ALMACENAR (? --> ES UN CAMPO QUE LO VA A ADQUIRIR DE LA VARIABLE membresia_id) (SIRVE PARA CREAR LA SENTENCIA SQL)
-					String query = "SELECT COUNT(ID_USUARIO) FROM CON_MEMBRESIAS WHERE ID_MEMBRESIAS = ?";
-					// LE DECIMOS QUE LA ? ANTERIOR COJA EL VALOR DE LA VARIABLE membresia_id (1 ES EL NUMERO DE ? Y membresia_id EL VALOR QUE LE QUEREMOS METER EN ESTE CASO EL VALOR ALMACENADO EN LA VARIABLE)
-					PreparedStatement stmt = con.prepareStatement(query);
-		            stmt.setInt(1, membresia_id);
-					// EJECUTAMOS LA QUERY ANTERIOR
-					rs = stmt.executeQuery();
-					// VARIABLE CONTADOR
-					int num_membresia=0;
-					// PARA RECORER LAS LINEAS QUE NOS SALGA EN LA SENTENCIA QUERY ANTERIOR
-					// MIENTRAS QUE AYA SIGUIENTE
-					while (rs.next()) {
-						// ALMACENA EL DATO DE LA COLUMNA NOMBRE EN LA VARIABLE nombre
-						num_membresia = rs.getInt(1);
-						// CAMBIA EL TEXTO DE lbl_Apellidos_User AL VALOR DE LA VARIABLE apellido
-						lbl_Total_membresias.setText(String.valueOf(num_membresia));
+					Connection con;
+					try {
+						con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "TRILOGY", "TRILOGY");
+						String query4 = "SELECT count(ID_USUARIO) FROM CON_MEMBRESIAS";
+						PreparedStatement stmt4 = con.prepareStatement(query4);
+						rs = stmt4.executeQuery();
+						int total_membresias=0;
+						while (rs.next()) {
+							// ALMACENA EL DATO DE LA COLUMNA NOMBRE EN LA VARIABLE totalGanancia
+							total_membresias = rs.getInt(1);
+							// CAMBIA EL TEXTO DE lbl_Total_Ganado AL VALOR DE LA VARIABLE totalGanancia
+							lbl_Total_membresias.setText(String.valueOf(total_membresias));
+						}
+					} catch (SQLException e1) {
+						JOptionPane.showMessageDialog(null, "ERROR. No se ha podido realizar la consulta. Perdone las molestias.");
 					}
-				} catch (SQLException e1) {
-					JOptionPane.showMessageDialog(null, "ERROR. No se ha podido conectar a la base de datos. Perdone las molestias."); // MENSAJE QUE SE LE MUESTRA AL USUARIO
-				}
-				try {
-					// NOS CONECTAMOS A LA BASE DE DATOS
-					Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "TRILOGY", "TRILOGY");
-					// REALIZAMOS EL SELECT CON LOS DATOS QUE QUEREMOS ALMACENAR (? --> ES UN CAMPO QUE LO VA A ADQUIRIR DE LA VARIABLE membresia_id) (SIRVE PARA CREAR LA SENTENCIA SQL)
-					String query2 = "SELECT SUM(MEMBRESIAS.PRECIO) FROM CON_MEMBRESIAS JOIN MEMBRESIAS ON CON_MEMBRESIAS.ID_MEMBRESIAS=MEMBRESIAS.ID_MEMBRESIAS WHERE CON_MEMBRESIAS.ID_MEMBRESIAS = ?";
-					// LE DECIMOS QUE LA ? ANTERIOR COJA EL VALOR DE LA VARIABLE membresia_id (1 ES EL NUMERO DE ? Y membresia_id EL VALOR QUE LE QUEREMOS METER EN ESTE CASO EL VALOR ALMACENADO EN LA VARIABLE)
-					PreparedStatement stmt2 = con.prepareStatement(query2);
-		            stmt2.setInt(1, membresia_id);
-					// EJECUTAMOS LA QUERY ANTERIOR
-					rs = stmt2.executeQuery();
-					// VARIABLE SUMATORIO
-					double totalGanancia=0;
-					// PARA RECORER LAS LINEAS QUE NOS SALGA EN LA SENTENCIA QUERY ANTERIOR
-					// MIENTRAS QUE AYA SIGUIENTE
-					while (rs.next()) {
-						// ALMACENA EL DATO DE LA COLUMNA NOMBRE EN LA VARIABLE nombre
-						totalGanancia = rs.getDouble(1);
-						// CAMBIA EL TEXTO DE lbl_Apellidos_User AL VALOR DE LA VARIABLE apellido
-						lbl_Total_Ganado.setText(String.valueOf(totalGanancia));
+				} else {
+					try {
+						// NOS CONECTAMOS A LA BASE DE DATOS
+						Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "TRILOGY", "TRILOGY");
+						// REALIZAMOS EL SELECT CON LOS DATOS QUE QUEREMOS ALMACENAR (? --> ES UN CAMPO QUE LO VA A ADQUIRIR DE LA VARIABLE membresia_id) (SIRVE PARA CREAR LA SENTENCIA SQL)
+						String query = "SELECT COUNT(ID_USUARIO) FROM CON_MEMBRESIAS WHERE ID_MEMBRESIAS = ?";
+						// LE DECIMOS QUE LA ? ANTERIOR USE EL VALOR DE LA VARIABLE membresia_id (1 ES EL NÚMERO DE ? Y membresia_id EL VALOR QUE LE QUEREMOS METER, EN ESTE CASO EL VALOR ALMACENADO EN LA VARIABLE)
+						PreparedStatement stmt = con.prepareStatement(query);
+						stmt.setInt(1, membresia_id);
+						// EJECUTAMOS LA QUERY ANTERIOR
+						rs = stmt.executeQuery();
+						// VARIABLE CONTADOR
+						int num_membresia=0;
+						// PARA RECORER LAS LÍNEAS QUE NOS SALGA EN LA SENTENCIA QUERY ANTERIOR
+						// MIENTRAS QUE HAYA SIGUIENTE
+						while (rs.next()) {
+							// ALMACENA EL DATO DE LA COLUMNA NOMBRE EN LA VARIABLE nombre
+							num_membresia = rs.getInt(1);
+							// CAMBIA EL TEXTO DE lbl_Apellidos_User AL VALOR DE LA VARIABLE apellido
+							lbl_Total_membresias.setText(String.valueOf(num_membresia));
+						}
+					} catch (SQLException e1) {
+						JOptionPane.showMessageDialog(null, "ERROR. No se ha podido conectar a la base de datos. Perdone las molestias."); // MENSAJE QUE SE LE MUESTRA AL USUARIO
 					}
-				} catch (SQLException e1) {
-					JOptionPane.showMessageDialog(null, "ERROR. No se ha podido conectar a la base de datos. Perdone las molestias."); // MENSAJE QUE SE LE MUESTRA AL USUARIO
+					try {
+						// NOS CONECTAMOS A LA BASE DE DATOS
+						Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "TRILOGY", "TRILOGY");
+						// REALIZAMOS EL SELECT CON LOS DATOS QUE QUEREMOS ALMACENAR (? --> ES UN CAMPO QUE LO VA A ADQUIRIR DE LA VARIABLE membresia_id) (SIRVE PARA CREAR LA SENTENCIA SQL)
+						String query2 = "SELECT SUM(MEMBRESIAS.PRECIO) FROM CON_MEMBRESIAS JOIN MEMBRESIAS ON CON_MEMBRESIAS.ID_MEMBRESIAS=MEMBRESIAS.ID_MEMBRESIAS WHERE CON_MEMBRESIAS.ID_MEMBRESIAS = ?";
+						// LE DECIMOS QUE LA ? ANTERIOR USE EL VALOR DE LA VARIABLE membresia_id (1 ES EL NÚMERO DE ? Y membresia_id EL VALOR QUE LE QUEREMOS METER, EN ESTE CASO EL VALOR ALMACENADO EN LA VARIABLE)
+						PreparedStatement stmt2 = con.prepareStatement(query2);
+						stmt2.setInt(1, membresia_id);
+						// EJECUTAMOS LA QUERY ANTERIOR
+						rs = stmt2.executeQuery();
+						// VARIABLE SUMATORIO
+						double totalGanancia=0;
+						// PARA RECORER LAS LÍNEAS QUE NOS SALGA EN LA SENTENCIA QUERY ANTERIOR
+						// MIENTRAS QUE HAYA SIGUIENTE
+						while (rs.next()) {
+							// ALMACENA EL DATO DE LA COLUMNA NOMBRE EN LA VARIABLE nombre
+							totalGanancia = rs.getDouble(1);
+							// CAMBIA EL TEXTO DE lbl_Apellidos_User AL VALOR DE LA VARIABLE apellido
+							lbl_Total_Ganado.setText(String.valueOf(totalGanancia));
+						}
+					} catch (SQLException e1) {
+						JOptionPane.showMessageDialog(null, "ERROR. No se ha podido conectar a la base de datos. Perdone las molestias."); // MENSAJE QUE SE LE MUESTRA AL USUARIO
+					}
 				}
-			}
 			}
 		});
 		btnCalcular_Ganancias.setOpaque(true);
@@ -556,7 +560,7 @@ public class Pagina_administrador extends JFrame {
 		btnCalcular_Ganancias.setAlignmentX(0.5f);
 		btnCalcular_Ganancias.setBounds(338, 202, 285, 55);
 		// ------------------------------------------------------------------------------------------------------
-		// BOTÓN CONFIRMACIÓN CAMBIO DE MEMBRESIA (ALTER EN BBDD)
+		// BOTÓN CONFIRMACIÓN CAMBIO DE MEMBRESÍA (ALTER EN BBDD)
 		// ------------------------------------------------------------------------------------------------------
 		btnCambioMembresia = new JButton("CAMBIAR MEMBRESÍA");
 		btnCambioMembresia.addMouseListener(new MouseAdapter() {
@@ -565,48 +569,48 @@ public class Pagina_administrador extends JFrame {
 				if (comprobar_user) {
 					comprobar_user=false;
 					if (lbl_Nombre.getText().equalsIgnoreCase("NOMBRE")==false && lbl_Apellidos_User.getText().equalsIgnoreCase("APELLIDOS")==false) {
-							// GUARDO EL VALOR DEL comboBox_Tipo_de_membreisa2 PARA LUEGO PODER COMPARARLO CON LA BASE DE DATOS PARA LA CONSULTA DE CAMBIAR MEMBRESIA
-							tipo_de_membreisa2=comboBox_Tipo_de_membreisa2.getSelectedItem().toString().toUpperCase();
-							switch (tipo_de_membreisa2) {
-								case "CRISTAL_BASIC":
-									membresia_id2=1;
-									break;
-								case "ZAFIRO_STANDARD":
-									membresia_id2=2;
-									break;
-								case "RUBI_STANDARD":
-									membresia_id2=3;
-									break;
-								case "DIAMANTE_PREMIUM":
-									membresia_id2=4;
-									break;
-								default:
-									membresia_id2=1;
-									break;
-							}
-							try {
-								String correos =txt_Correo.getText().toUpperCase();
-								Connection conn = DriverManager.getConnection(url, login, password);
-								String sql = "UPDATE CON_MEMBRESIAS SET ID_MEMBRESIAS = ? WHERE ID_USUARIO = (SELECT ID_USUARIO FROM USUARIOS WHERE UPPER(CORREO) = ?)";
-								PreparedStatement pstmt = conn.prepareStatement(sql);
-								pstmt.setInt(1, membresia_id2);
-								pstmt.setString(2, correos);
-								pstmt.executeUpdate();
-								pstmt.close();
-								conn.close();
-								JOptionPane.showMessageDialog(null, " El usuarios se ha actualizado correctamete.");
-								txt_Correo.setText("CORREO");
-								lbl_Nombre.setText("NOMBRE");
-								lbl_Apellidos_User.setText("APELLIDOS");
-							} catch (SQLException e1) {
-								e1.printStackTrace();
-							}
+						// GUARDO EL VALOR DEL comboBox_Tipo_de_membreisa2 PARA LUEGO PODER COMPARARLO CON LA BASE DE DATOS PARA LA CONSULTA DE CAMBIAR MEMBRESÍA
+						tipo_de_membreisa2=comboBox_Tipo_de_membreisa2.getSelectedItem().toString().toUpperCase();
+						switch (tipo_de_membreisa2) {
+						case "CRISTAL_BASIC":
+							membresia_id2=1;
+							break;
+						case "ZAFIRO_STANDARD":
+							membresia_id2=2;
+							break;
+						case "RUBI_STANDARD":
+							membresia_id2=3;
+							break;
+						case "DIAMANTE_PREMIUM":
+							membresia_id2=4;
+							break;
+						default:
+							membresia_id2=1;
+							break;
+						}
+						try {
+							String correos =txt_Correo.getText().toUpperCase();
+							Connection conn = DriverManager.getConnection(url, login, password);
+							String sql = "UPDATE CON_MEMBRESIAS SET ID_MEMBRESIAS = ? WHERE ID_USUARIO = (SELECT ID_USUARIO FROM USUARIOS WHERE UPPER(CORREO) = ?)";
+							PreparedStatement pstmt = conn.prepareStatement(sql);
+							pstmt.setInt(1, membresia_id2);
+							pstmt.setString(2, correos);
+							pstmt.executeUpdate();
+							pstmt.close();
+							conn.close();
+							JOptionPane.showMessageDialog(null, " El usuario se ha actualizado correctamete.");
+							txt_Correo.setText("CORREO");
+							lbl_Nombre.setText("NOMBRE");
+							lbl_Apellidos_User.setText("APELLIDOS");
+						} catch (SQLException e1) {
+							e1.printStackTrace();
+						}
 					} else {
-						JOptionPane.showMessageDialog(null, "ERROR. No se ha podido encontrar ningun usuario con el correo --> "+txt_Correo.getText());
+						JOptionPane.showMessageDialog(null, "ERROR. No se ha encontrado ningún usuario con el correo --> "+txt_Correo.getText());
 					}
 				} else {
 					comprobar_user=false;
-					JOptionPane.showMessageDialog(null, "ERROR. No se ha comprobado el usuarios por favor compruebe el usuario dandole al botón COMPROBAR USUARIOS");
+					JOptionPane.showMessageDialog(null, "ERROR. No se ha comprobado el usuario, por favor, compruebe el usuario dándole al botón: COMPROBAR USUARIOS");
 				}
 			}
 		});
@@ -641,7 +645,7 @@ public class Pagina_administrador extends JFrame {
 							resultSet.close();
 							selectStatement.close();
 						} catch (SQLException e1) {
-							JOptionPane.showMessageDialog(null, "ERROR. No se ha podido el eliminado del usuario. Perdone las molestias.");
+							JOptionPane.showMessageDialog(null, "ERROR. No se ha realizado el eliminado del usuario. Perdone las molestias.");
 						}
 						try {
 							String correo = txt_Correo.getText().toUpperCase();
@@ -658,7 +662,7 @@ public class Pagina_administrador extends JFrame {
 							resultSet.close();
 							selectStatement.close();
 						} catch (SQLException e1) {
-							JOptionPane.showMessageDialog(null, "ERROR. No se ha podido el eliminado del usuario. Perdone las molestias.");
+							JOptionPane.showMessageDialog(null, "ERROR. No se ha realizado el eliminado del usuario. Perdone las molestias.");
 						}
 						try {
 							String correo = txt_Correo.getText().toUpperCase();
@@ -668,14 +672,14 @@ public class Pagina_administrador extends JFrame {
 							deleteStatement.close();
 							JOptionPane.showMessageDialog(null, "USUARIO ELIMINADO CORRECTAMENTE");
 						} catch (SQLException e1) {
-							JOptionPane.showMessageDialog(null, "ERROR. No se ha podido el eliminado del usuario. Perdone las molestias.");
+							JOptionPane.showMessageDialog(null, "ERROR. No se ha realizado el eliminado del usuario. Perdone las molestias.");
 						}
 					} else {
-						JOptionPane.showMessageDialog(null, "ERROR. No se ha podido encontrar ningun usuario con el correo --> "+txt_Correo.getText());
+						JOptionPane.showMessageDialog(null, "ERROR. No se ha encontrado ningún usuario con el correo --> "+txt_Correo.getText());
 					}
 				} else {
 					comprobar_user=false;
-					JOptionPane.showMessageDialog(null, "ERROR. No se ha comprobado el usuarios por favor compruebe el usuario dandole al botón COMPROBAR USUARIOS");
+					JOptionPane.showMessageDialog(null, "ERROR. No se ha comprobado el usuario, por favor, compruebe el usuario dandole al botón COMPROBAR USUARIOS");
 				}
 			}
 		});
@@ -702,17 +706,17 @@ public class Pagina_administrador extends JFrame {
 					st=connection.createStatement();
 					// REALIZAMOS EL SELECT CON LOS DATOS QUE QUEREMOS ALMACENAR (? --> ES UN CAMPO QUE LO VA A ADQUIRIR DE LA VARIABLE correos) (SIRVE PARA CREAR LA SENTENCIA SQL)
 					PreparedStatement statement = connection.prepareStatement("select count(ID_USUARIO) from USUARIOS WHERE CORREO = ?");
-					// LE DECIMOS QUE LA ? ANTERIOR COJA EL VALOR DE LA VARIABLE correos (1 ES EL NUMERO DE ? Y correos EL VALOR QUE LE QUEREMOS METER EN ESTE CASO EL VALOR ALMACENADO EN LA VARIABLE)
+					// LE DECIMOS QUE LA ? ANTERIOR USE EL VALOR DE LA VARIABLE correos (1 ES EL NÚMERO DE ? Y correos EL VALOR QUE LE QUEREMOS METER, EN ESTE CASO EL VALOR ALMACENADO EN LA VARIABLE)
 					statement.setString(1, correos);
 					// EJECUTAMOS LA QUERY ANTERIOR
 					rs = statement.executeQuery();
-					// PARA RECORER LAS LINEAS QUE NOS SALGA EN LA SENTENCIA QUERY ANTERIOR
-					// MIENTRAS QUE AYA SIGUIENTE
+					// PARA RECORER LAS LÍNEAS QUE NOS SALGA EN LA SENTENCIA QUERY ANTERIOR
+					// MIENTRAS QUE HAYA SIGUIENTE
 					while (rs.next()) {
 						// ALMACENA EL DATO DE LA COLUMNA NOMBRE EN LA VARIABLE nombre
 						contador_correo = rs.getInt(1);
 					}
-				// SI NO SE HA PODIDO CONECTAR A LA BASE DE DATOS POR CUALQUIER MOTIVO SALTA UN MENSAJE AL USUARIO
+					// SI NO SE HA CONECTAR A LA BASE DE DATOS POR CUALQUIER MOTIVO, SALTA UN MENSAJE AL USUARIO
 				} catch (SQLException e1) {
 					JOptionPane.showMessageDialog(null, "ERROR. No se ha podido conectar a la base de datos. Perdone las molestias."); // MENSAJE QUE SE LE MUESTRA AL USUARIO
 				}
@@ -721,18 +725,18 @@ public class Pagina_administrador extends JFrame {
 					// CREAMOS DOS VARIABLES PARA MOSTRAR EL NOMBRE Y APELLIDO DEL USUARIOS QUE CORRESPONDA CON EL CORREO DE LA VARIABLE correos
 					String nombre;
 					String apellido;
-					// EN UN BLOKE TRY CATCH PARA LAS EXCEPCIONES
+					// EN UN BLOQUE TRY CATCH PARA LAS EXCEPCIONES
 					try {
 						// NOS CONECTAMOS A LA BASE DE DATOS
 						st=connection.createStatement();
 						// REALIZAMOS EL SELECT CON LOS DATOS QUE QUEREMOS ALMACENAR (? --> ES UN CAMPO QUE LO VA A ADQUIRIR DE LA VARIABLE correos) (SIRVE PARA CREAR LA SENTENCIA SQL)
 						PreparedStatement statement = connection.prepareStatement("select NOMBRE,APELLIDOS from USUARIOS WHERE CORREO = ?");
-						// LE DECIMOS QUE LA ? ANTERIOR COJA EL VALOR DE LA VARIABLE correos (1 ES EL NUMERO DE ? Y correos EL VALOR QUE LE QUEREMOS METER EN ESTE CASO EL VALOR ALMACENADO EN LA VARIABLE)
+						// LE DECIMOS QUE LA ? ANTERIOR USE EL VALOR DE LA VARIABLE correos (1 ES EL NÚMERO DE ? Y correos EL VALOR QUE LE QUEREMOS METER, EN ESTE CASO EL VALOR ALMACENADO EN LA VARIABLE)
 						statement.setString(1, correos);
 						// EJECUTAMOS LA QUERY ANTERIOR
 						rs = statement.executeQuery();
-						// PARA RECORER LAS LINEAS QUE NOS SALGA EN LA SENTENCIA QUERY ANTERIOR
-						// MIENTRAS QUE AYA SIGUIENTE
+						// PARA RECORER LAS LÍNEAS QUE NOS SALGA EN LA SENTENCIA QUERY ANTERIOR
+						// MIENTRAS QUE HAYA SIGUIENTE
 						while (rs.next()) {
 							// ALMACENA EL DATO DE LA COLUMNA NOMBRE EN LA VARIABLE nombre
 							nombre = rs.getString("NOMBRE");
@@ -743,13 +747,13 @@ public class Pagina_administrador extends JFrame {
 							// CAMBIA EL TEXTO DE lbl_Apellidos_User AL VALOR DE LA VARIABLE apellido
 							lbl_Apellidos_User.setText(apellido);
 						}
-					// SI NO SE HA PODIDO CONECTAR A LA BASE DE DATOS POR CUALQUIER MOTIVO SALTA UN MENSAJE AL USUARIO
+						// SI NO SE HA CONECTADO A LA BASE DE DATOS POR CUALQUIER MOTIVO, SALTA UN MENSAJE AL USUARIO
 					} catch (SQLException e1) {
 						JOptionPane.showMessageDialog(null, "ERROR. No se ha podido conectar a la base de datos. Perdone las molestias."); // MENSAJE QUE SE LE MUESTRA AL USUARIO
 					}
 				} else {
 					comprobar_user=false;
-					JOptionPane.showMessageDialog(null, "No se ha encontrado ningun usuarios con el correo --> "+correos+".");
+					JOptionPane.showMessageDialog(null, "No se ha encontrado ningún usuario con el correo --> "+correos+".");
 					txt_Correo.setText("CORREO");
 					lbl_Nombre.setText("NOMBRE");
 					lbl_Apellidos_User.setText("APELLIDOS");
@@ -770,64 +774,66 @@ public class Pagina_administrador extends JFrame {
 		lbl_FleDesple.setBounds(0, 15, 23, 26);
 		// AJUSTAR IMAGEN AL CONTENIDO
 		ImageIcon fleDesple = new ImageIcon(getClass().getResource("/Trilogy_imagenes/IconoDesplegableEncoger.png")); // CREACIÓN NUEVO OBJETO CON LA RUTA DE LA IMAGEN
-		ImageIcon imgfleDesple = new ImageIcon(fleDesple.getImage().getScaledInstance(lbl_FleDesple.getWidth(), lbl_FleDesple.getHeight(), Image.SCALE_SMOOTH)); // CREAMOS OTRO OBJETO PARA QUE SE AJUSTE AUTOMATICAMENTE LA IMAGEN AL LABEL
-		lbl_FleDesple.setIcon(imgfleDesple); // DECIMOS QUE EL ICONO ES IGUAL A EL OBJETO QUE SE AJUSTA AUTOMATICAMENTE AL TAMAÑO DEL LABEL
+		ImageIcon imgfleDesple = new ImageIcon(fleDesple.getImage().getScaledInstance(lbl_FleDesple.getWidth(), lbl_FleDesple.getHeight(), Image.SCALE_SMOOTH)); // CREAMOS OTRO OBJETO PARA QUE SE AJUSTE AUTOMÁTICAMENTE LA IMAGEN AL LABEL
+		lbl_FleDesple.setIcon(imgfleDesple); // DECIMOS QUE EL ICONO ES IGUAL A EL OBJETO QUE SE AJUSTA AUTOMÁTICAMENTE AL TAMAÑO DEL LABEL
 		// EVENTOS CON EL RATÓN
 		lbl_FleDesple.addMouseListener(new MouseAdapter() {
 			@Override
-			// CUANDO EL RATÓN CLICKEA
+			// CUANDO EL RATÓN ES PULSADO
 			public void mouseClicked(MouseEvent e) {
 				if (panelLateral.getBounds().width == 219) {
-						// CAMBIA EL TAMAÑO Y LA POSICION DE LOS ELEMENTOS DE LA IZQUIERDA (CUANDO LO ENCOJE)
-						panelLateral.setBounds(0,0,72,664);
-						ImageIcon fleDespleDesplegar = new ImageIcon(getClass().getResource("/Trilogy_imagenes/IconoDesplegableDesplegar.png")); // CREACIÓN NUEVO OBJETO CON LA RUTA DE LA IMAGEN
-						ImageIcon imgfleDespleDesplegar = new ImageIcon(fleDespleDesplegar.getImage().getScaledInstance(lbl_FleDesple.getWidth(), lbl_FleDesple.getHeight(), Image.SCALE_SMOOTH));
-						panel_Contenido_Admin.setBounds(70,0,1130,664);
-						lbl_Img_Fondo.setBounds(0, 0, 1130, 664);
-						ImageIcon fondo = new ImageIcon(getClass().getResource("/Trilogy_imagenes/Fondo_Formulario.png")); // CREACIÓN NUEVO OBJETO CON LA RUTA DE LA IMAGEN
-						ImageIcon imgFondo = new ImageIcon(fondo.getImage().getScaledInstance(lbl_Img_Fondo.getWidth(), lbl_Img_Fondo.getHeight(), Image.SCALE_SMOOTH)); // CREAMOS OTRO OBJETO PARA QUE SE AJUSTE AUTOMATICAMENTE LA IMAGEN AL LABEL
-						lbl_Img_Fondo.setIcon(imgFondo);
-						lbl_FleDesple.setIcon(imgfleDespleDesplegar);
-						lbl_Texto_1.setBounds(30, 35, 1070, 48);
-						lbl_Texto_2.setBounds(30, 283, 1070, 48);
-						comboBox_Tipo_de_membreisa1.setBounds(50, 124, 356, 45);
-						btnCalcular_Ganancias.setBounds(340, 202, 450, 55); //
-						lbl_Total_membresias.setBounds(426, 124, 296, 45);
-						lbl_Total_Ganado.setBounds(742, 124, 327, 45);
-						txt_Correo.setBounds(50, 360, 597, 45);
-						lbl_Nombre.setBounds(672, 360, 397, 45);
-						lbl_Apellidos_User.setBounds(74, 460, 550, 45);
-						comboBox_Tipo_de_membreisa2.setBounds(662, 460, 369, 45);
-						btnComprobar_users.setBounds(30, 569, 334, 55);
-						btnCambioMembresia.setBounds(399, 569, 334, 55);
-						btnConfirmarEliminacion.setBounds(769, 569, 299, 55);
-						EsconderBotones();
+					// CAMBIA EL TAMAÑO Y LA POSICIÓN DE LOS ELEMENTOS DE LA IZQUIERDA (CUANDO LO MINIMIZA)
+					panelLateral.setBounds(0,0,72,664);
+					ImageIcon fleDespleDesplegar = new ImageIcon(getClass().getResource("/Trilogy_imagenes/IconoDesplegableDesplegar.png")); // CREACIÓN NUEVO OBJETO CON LA RUTA DE LA IMAGEN
+					ImageIcon imgfleDespleDesplegar = new ImageIcon(fleDespleDesplegar.getImage().getScaledInstance(lbl_FleDesple.getWidth(), lbl_FleDesple.getHeight(), Image.SCALE_SMOOTH));
+					panel_Contenido_Admin.setBounds(70,0,1130,664);
+					lbl_Img_Fondo.setBounds(0, 0, 1130, 664);
+					ImageIcon fondo = new ImageIcon(getClass().getResource("/Trilogy_imagenes/Fondo_Formulario.png")); // CREACIÓN NUEVO OBJETO CON LA RUTA DE LA IMAGEN
+					ImageIcon imgFondo = new ImageIcon(fondo.getImage().getScaledInstance(lbl_Img_Fondo.getWidth(), lbl_Img_Fondo.getHeight(), Image.SCALE_SMOOTH)); // CREAMOS OTRO OBJETO PARA QUE SE AJUSTE AUTOMÁTICAMENTE LA IMAGEN AL LABEL
+					lbl_Img_Fondo.setIcon(imgFondo);
+					lbl_FleDesple.setIcon(imgfleDespleDesplegar);
+					lbl_Texto_1.setBounds(30, 35, 1070, 48);
+					lbl_Texto_2.setBounds(30, 283, 1070, 48);
+					comboBox_Tipo_de_membreisa1.setBounds(50, 124, 356, 45);
+					btnCalcular_Ganancias.setBounds(340, 202, 450, 55); //
+					lbl_Total_membresias.setBounds(426, 124, 296, 45);
+					lbl_Total_Ganado.setBounds(742, 124, 327, 45);
+					txt_Correo.setBounds(50, 360, 597, 45);
+					lbl_Nombre.setBounds(672, 360, 397, 45);
+					lbl_Apellidos_User.setBounds(74, 460, 550, 45);
+					comboBox_Tipo_de_membreisa2.setBounds(662, 460, 369, 45);
+					btnComprobar_users.setBounds(30, 569, 334, 55);
+					btnCambioMembresia.setBounds(399, 569, 334, 55);
+					btnConfirmarEliminacion.setBounds(769, 569, 299, 55);
+					EsconderBotones();
 				} else {
-						// CAMBIA EL TAMAÑO Y LA POSICION DE LOS ELEMENTOS DE LA IZQUIERDA (CUANDO LO ENSANCHA)
-						panelLateral.setBounds(0,0,219,664);
-						panel_Contenido_Admin.setBounds(219,0,961,664);
-						lbl_Img_Fondo.setBounds(0, 0, 961, 664);
-						ImageIcon fondo = new ImageIcon(getClass().getResource("/Trilogy_imagenes/Fondo_Formulario.png")); // CREACIÓN NUEVO OBJETO CON LA RUTA DE LA IMAGEN
-						ImageIcon imgFondo = new ImageIcon(fondo.getImage().getScaledInstance(lbl_Img_Fondo.getWidth(), lbl_Img_Fondo.getHeight(), Image.SCALE_SMOOTH)); // CREAMOS OTRO OBJETO PARA QUE SE AJUSTE AUTOMATICAMENTE LA IMAGEN
-						lbl_Img_Fondo.setIcon(imgFondo);
-						lbl_FleDesple.setIcon(imgfleDesple);
-						lbl_Texto_1.setBounds(30, 35, 901, 48);
-						lbl_Texto_2.setBounds(30, 283, 901, 48);
-						comboBox_Tipo_de_membreisa1.setBounds(50, 124, 300, 45);
-						btnCalcular_Ganancias.setBounds(338, 202, 285, 55);
-						lbl_Total_membresias.setBounds(375, 124, 240, 45);
-						lbl_Total_Ganado.setBounds(640, 124, 270, 45);
-						txt_Correo.setBounds(50, 360, 485, 45);
-						lbl_Nombre.setBounds(570, 360, 340, 45);
-						lbl_Apellidos_User.setBounds(74, 460, 450, 45);
-						comboBox_Tipo_de_membreisa2.setBounds(593, 460, 300, 45);
-						btnComprobar_users.setBounds(30, 569, 285, 55);
-						btnCambioMembresia.setBounds(345, 569, 285, 55);
-						btnConfirmarEliminacion.setBounds(660, 569, 250, 55);
-						MostrarBotones();
+					// CAMBIA EL TAMAÑO Y LA POSICIÓN DE LOS ELEMENTOS DE LA IZQUIERDA (CUANDO LO ENSANCHA)
+					panelLateral.setBounds(0,0,219,664);
+					panel_Contenido_Admin.setBounds(219,0,961,664);
+					lbl_Img_Fondo.setBounds(0, 0, 961, 664);
+					ImageIcon fondo = new ImageIcon(getClass().getResource("/Trilogy_imagenes/Fondo_Formulario.png")); // CREACIÓN NUEVO OBJETO CON LA RUTA DE LA IMAGEN
+					ImageIcon imgFondo = new ImageIcon(fondo.getImage().getScaledInstance(lbl_Img_Fondo.getWidth(), lbl_Img_Fondo.getHeight(), Image.SCALE_SMOOTH)); // CREAMOS OTRO OBJETO PARA QUE SE AJUSTE AUTOMÁTICAMENTE LA IMAGEN
+					lbl_Img_Fondo.setIcon(imgFondo);
+					lbl_FleDesple.setIcon(imgfleDesple);
+					lbl_Texto_1.setBounds(30, 35, 901, 48);
+					lbl_Texto_2.setBounds(30, 283, 901, 48);
+					comboBox_Tipo_de_membreisa1.setBounds(50, 124, 300, 45);
+					btnCalcular_Ganancias.setBounds(338, 202, 285, 55);
+					lbl_Total_membresias.setBounds(375, 124, 240, 45);
+					lbl_Total_Ganado.setBounds(640, 124, 270, 45);
+					txt_Correo.setBounds(50, 360, 485, 45);
+					lbl_Nombre.setBounds(570, 360, 340, 45);
+					lbl_Apellidos_User.setBounds(74, 460, 450, 45);
+					comboBox_Tipo_de_membreisa2.setBounds(593, 460, 300, 45);
+					btnComprobar_users.setBounds(30, 569, 285, 55);
+					btnCambioMembresia.setBounds(345, 569, 285, 55);
+					btnConfirmarEliminacion.setBounds(660, 569, 250, 55);
+					MostrarBotones();
 				}
 			}
 		});
+		// ------------------------------------------------------------------------------------------------------
+		// JERARQUÍA DEL PANEL PRINCIPAL
 		// ------------------------------------------------------------------------------------------------------
 		panel_Contenido_Admin.add(btnCalcular_Ganancias);
 		panel_Contenido_Admin.add(btnComprobar_users);
